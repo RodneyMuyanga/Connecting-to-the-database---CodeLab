@@ -18,7 +18,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id; // Rettet fra String til Integer og markeret som @Id
+    private Integer id;
 
     private String name;
     private Integer phoneNumber;
