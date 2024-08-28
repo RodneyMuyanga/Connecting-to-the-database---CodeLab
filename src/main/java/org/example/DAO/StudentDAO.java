@@ -2,21 +2,20 @@ package org.example.DAO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import org.example.entities.Person;
 
+import org.example.entities.Student;
 import org.example.persistence.HibernateConfig;
 
-import java.time.LocalDate;
 import java.util.Set;
 
-public class PersonDAO implements IDAO {
+public class StudentDAO implements IDAO {
 
     private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
-    public void cretePerson(Person person) {
+    public void creteStudent(Student student) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            em.persist(person);
+            em.persist(student);
             em.getTransaction().commit();
         }
     }
@@ -50,5 +49,4 @@ public class PersonDAO implements IDAO {
     public void delete(Object o) {
 
     }
-
 }
