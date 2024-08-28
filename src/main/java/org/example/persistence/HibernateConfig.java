@@ -70,9 +70,9 @@ public class HibernateConfig {
     }
 
 
-    private static String getDBName() {
-        return Databasens navn skal returneres;
-    }
+//    private static String getDBName() {
+//        return Databasens navn skal returneres;
+//    }
 
     private static Properties setBaseProperties(Properties props) {
         props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
