@@ -2,45 +2,41 @@ package org.example.DAO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import org.example.entities.Person;
 
+import org.example.entities.Student;
 import org.example.persistence.HibernateConfig;
 
-import java.time.LocalDate;
 import java.util.Set;
 
-public class PersonDAO implements IDAO<Person> {
+public class StudentDAO implements IDAO<Student> {
 
     private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
-    public void create(Person person) {
+    public void create(Student student) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            em.persist(person);
+            em.persist(student);
             em.getTransaction().commit();
         }
     }
 
     @Override
-    public void update(Person person) {
-
-    }
-
-    @Override
-    public void delete(Person person) {
-
-    }
-
-    @Override
-    public Person getById(Integer id) {
+    public Student getById(Integer id) {
         return null;
     }
 
     @Override
-    public Set<Person> getAll() {
+    public Set<Student> getAll() {
         return Set.of();
     }
 
+    @Override
+    public void update(Student student) {
 
+    }
 
+    @Override
+    public void delete(Student student) {
+
+    }
 }
