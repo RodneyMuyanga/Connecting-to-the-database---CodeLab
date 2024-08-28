@@ -19,6 +19,4 @@ public class PersonDAO
             em.getTransaction().commit();
         }
     }
-
-
 }
