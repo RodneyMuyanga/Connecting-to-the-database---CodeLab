@@ -8,11 +8,11 @@ import org.example.persistence.HibernateConfig;
 
 import java.util.Set;
 
-public class StudentDAO implements IDAO {
+public class StudentDAO implements IDAO<Student> {
 
     private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
-    public void creteStudent(Student student) {
+    public void create(Student student) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.persist(student);
@@ -21,32 +21,22 @@ public class StudentDAO implements IDAO {
     }
 
     @Override
-    public Object getStudentById(Integer id) {
+    public Student getById(Integer id) {
         return null;
     }
 
     @Override
-    public Object getCourseById(Integer id) {
-        return null;
-    }
-
-    @Override
-    public Set getAll() {
+    public Set<Student> getAll() {
         return Set.of();
     }
 
     @Override
-    public void create(Object o) {
+    public void update(Student student) {
 
     }
 
     @Override
-    public void Update(Object o) {
-
-    }
-
-    @Override
-    public void delete(Object o) {
+    public void delete(Student student) {
 
     }
 }
